@@ -9,7 +9,7 @@ source.exclude_dirs = .git,.github,tools,bin,.buildozer,__pycache__
 version = 1.0
 
 # chess = python-chess (puro Python). pyjnius/android: red WiFi y pantalla encendida.
-requirements = python3,kivy==2.3.0,chess,pyjnius,android
+requirements = python3,kivy==2.3.1,python-chess,pyjnius==1.7.0
 
 icon.filename = %(source.dir)s/icono.png
 orientation = landscape
