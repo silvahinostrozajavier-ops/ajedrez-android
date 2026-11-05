@@ -1,0 +1,46 @@
+name: Crear APK
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:          # también se puede lanzar a mano desde la pestaña Actions
+
+jobs:
+  apk:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Dependencias del sistema
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y git zip unzip openjdk-17-jdk autoconf libtool pkg-config \
+            zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev
+
+      - name: Instalar buildozer
+        run: |
+          python -m pip install --upgrade pip
+          pip install buildozer "cython<3" virtualenv setuptools pillow
+
+      - name: Preparar icono
+        run: python tools/preparar_icono.py
+
+      - name: Revisar imágenes
+        run: |
+          for f in w_Peon w_Caballo w_Alfil w_Torre w_Dama w_Rey b_Peon b_Caballo b_Alfil b_Torre b_Dama b_Rey \
+                   peon_blanco peon_negro peon_negro_dama tablero_3_en_raya equis_3_en_raya circulo_3_en_raya; do
+            [ -f "$f.png" ] || echo "::warning::Falta $f.png"
+          done
+
+      - name: Compilar APK
+        run: buildozer -v android debug
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: juegos-de-mesa-apk
+          path: bin/*.apk

@@ -1,0 +1,50 @@
+==================================================
+📋 LISTADO COMPLETO DE:
+C:\Users\javier\Desktop\ajedres android\ajedres android
+==================================================
+
+📁 .github
+    📁 workflows
+        📄 crear-apk.yml
+📄 .gitignore
+📄 buildozer.spec
+📄 b_Alfil.png
+📄 b_Caballo.png
+📄 b_Dama.png
+📄 b_Peon.png
+📄 b_Rey.png
+📄 b_Torre.png
+📄 circulo_3_en_raya.png
+📄 circulo_3_en_raya1.png
+📄 equis_3_en_raya.png
+📄 gfx.py
+📄 icono.ico
+📄 juegos_android.zip
+📄 juego_ajedrez.py
+📄 juego_damas.py
+📄 juego_tresenraya.py
+📄 LEEME.md
+📄 listado_ajedres android.txt
+📄 listarCARPETAS.exe
+📄 main.py
+📄 peon_blanco.png
+📄 peon_blanco_dama.png
+📄 peon_dama_blanca.png
+📄 peon_negro.png
+📄 peon_negro_dama.png
+📄 stockfish-android
+📄 tablero_3_en_raya.png
+📄 texel_android
+📁 tools
+    📄 preparar_icono.py
+📄 w_Alfil.png
+📄 w_Caballo.png
+📄 w_Dama.png
+📄 w_Peon.png
+📄 w_Rey.png
+📄 w_Torre.png
+
+==================================================
+📁 Total carpetas: 3
+📄 Total archivos: 37
+==================================================
